@@ -7,6 +7,9 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
+-- Enable rustfmt on save
+vim.g.rustfmt_autosave = 1
+
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
@@ -45,3 +48,4 @@ require("lazy").setup({
     },
   },
 })
+
