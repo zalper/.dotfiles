@@ -9,7 +9,7 @@ if true then return {} end
 -- * disable/enabled LazyVim plugins
 -- * override the configuration of LazyVim plugins
 return {
-  
+
   -- add gruvbox
   { "ellisonleao/gruvbox.nvim" },
 
@@ -21,6 +21,18 @@ return {
     },
   },
 
+  -- LSP completion source:
+  { "hrsh7th/cmp-nvim-lsp" },
+  { "puremourning/vimspector" },
+
+  -- Useful completion sources:
+  { "hrsh7th/cmp-nvim-lua" },
+  { "hrsh7th/cmp-nvim-lsp-signature-help" },
+  { "hrsh7th/cmp-vsnip" },
+  { "hrsh7th/cmp-path" },
+  { "hrsh7th/cmp-buffer" },
+  { "hrsh7th/cmp-vim-vsnip" },
+
   -- change trouble config
   {
     "folke/trouble.nvim",
@@ -28,8 +40,8 @@ return {
     opts = { use_diagnostic_signs = true },
   },
 
-  -- disable trouble
-  { "folke/trouble.nvim", enabled = false },
+  -- enable/disable trouble
+  { "folke/trouble.nvim", enabled = true },
 
   -- override nvim-cmp and add cmp-emoji
   {
@@ -136,6 +148,7 @@ return {
         "typescript",
         "vim",
         "yaml",
+        "toml",
       },
     },
   },
@@ -192,13 +205,13 @@ return {
       },
     },
   },
-  
-    { 'rust-lang/rust.vim' },
-    {
-        'mrcjkb/rustaceanvim',
-        version = '^4',
-        ft = { 'rust' },
-    },
+
+  { "rust-lang/rust.vim" },
+  {
+    "mrcjkb/rustaceanvim",
+    version = "^4",
+    ft = { "rust" },
+  },
 
   -- Use <tab> for completion and snippets (supertab)
   -- first: disable default <tab> and <s-tab> behavior in LuaSnip
