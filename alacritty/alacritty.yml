@@ -1,2 +1,9 @@
 window:
   startup_mode: FullScreen
+  
+scrolling:
+  history: 100000
+  
+terminal:
+  osc52: CopyPaste
+
